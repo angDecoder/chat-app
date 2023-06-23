@@ -1,0 +1,14 @@
+#App {
+    width: 100vw;
+    height: 100vh;
+    /* background-color: url; */
+    background-image: linear-gradient(rgba(0, 0, 0, 0) 70%, rgba(0, 0, 0, 1)), url('./assets/subtle-prism.svg');
+    background-repeat: repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+.message{
+    background-color: red;
+}
