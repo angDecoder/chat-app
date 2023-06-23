@@ -7,51 +7,8 @@ import adduser from '../../assets/adduser.svg';
 import Contact from './Contact';
 import Close from '../../assets/cross.svg';
 import useClickOutside from '../../hooks/useClickOutside';
+import { useSelector } from 'react-redux';
 
-const allContacts = [
-  {
-    username: 'rahul',
-    image: "../../assets/user.png",
-    lastMessage: {
-      type: 'text', message: ';akjdkfjke;kherhker; hej hhfjhlwejh Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam autem saepe expedita doloribus rerum dolorem vitae nemo reiciendis quasi aspernatur!',
-      time: '10/2/24'
-    },
-    unreadMessaunreadMessagege: 2
-  },
-  {
-    username: 'sanju',
-    image: "../../assets/user.png",
-    lastMessage: {
-      type: 'text', message: ';akjdkfjke;kherhker; hej hhfjhlwejh',
-      time: '10/2/24'
-    },
-    unreadMessage: 2
-  },
-  {
-    username: 'manish',
-    image: "../../assets/user.png",
-    lastMessage: {
-      type: 'text', message: ';akjdkfjke;kherhker; hej hhfjhlwejh',
-      time: '10/2/24'
-    },
-    unreadMessage: 2
-  },
-  {
-    username: 'angshu',
-    image: "../../assets/user.png",
-    lastMessage: {
-      type: 'text', message: ';akjdkfjke;kherhker; hej hhfjhlwejh',
-      time: '10/2/24'
-    },
-    unreadMessage: 2
-  },
-
-]
-
-const user = {
-  username: 'Angshu',
-  image: '',
-}
 
 const droplist = [
   {
@@ -72,21 +29,27 @@ const droplist = [
 function ContactList({ currentChat }) {
 
   const dropDownRef = useRef(null);
+  const contactList = useSelector(state=>state.contact);
+  const user = useSelector(state=>state.user);
+  
   const hideDropDown = () => {
     console.log('here');
     const drop = document.querySelector('#contact_droplist > div');
     drop.style.display = 'none';
   }
-
+  
   const showDropDown = () => {
-
     const drop = document.querySelector('#contact_droplist > div');
     const dis = drop.style.display;
-    if (dis == 'none')
+    if (dis !=='flex'){
       drop.style.display = 'flex';
+      show();
+    }
   }
+  
+  const show = useClickOutside(dropDownRef, hideDropDown)
+  console.log(contactList);
 
-  useClickOutside(dropDownRef, hideDropDown)
 
   return (
     <div id='Contact'>
@@ -117,7 +80,7 @@ function ContactList({ currentChat }) {
       </div>
       <div id='contact_list'>
         {
-          allContacts.map((elem, i) => <Contact elem={elem} key={i} />)
+          Object.values(contactList).map((elem, i) => <Contact elem={elem} key={i} />)
         }
       </div>
     </div>

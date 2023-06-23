@@ -17,7 +17,7 @@ function Contact({elem, i}) {
         <img src={userimg} alt="" className='image-id' />
         {
           unreadMessage > 0 ?
-            <div className='unread'>
+            <div className='svg-img unread'>
               {unreadMessage}
             </div> :
             <></>
