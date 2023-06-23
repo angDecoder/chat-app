@@ -1,0 +1,109 @@
+#Contact{
+    /* background: blue; */
+    flex: none;
+    height: 100vh;
+    width: 100vw;
+    overflow-y: auto;
+    /* overflow: hidden; */
+}
+
+#contact_user{
+    display: flex;
+    align-items: center;
+    /* justify-content: space-between; */
+    position: relative;
+
+    padding : 0.4em;
+    background-color: rgba(0, 0, 0, 0.61);
+}
+#contact_user > span{
+    /* background-color: red; */
+    font-size: larger;
+    font-weight: bold;
+   flex-grow: 1;
+   padding-inline: 0.5em;
+}
+
+#contact_list{
+    display: flex;
+    flex-direction: column;
+    padding-block: 1.5em;
+    gap : 1em;
+}
+
+.contact_elem{
+    padding-inline : 0.4em;
+    padding-block: 1em;
+    /* background: blue; */
+    background-color: rgba(0, 0, 0, 0.538);
+    display: flex;
+    gap : 0.4em;
+    align-items: center;
+}
+.contact_message{
+    color : var(--text3);
+    width: 100%;
+}
+.contact_username{
+    color : var(--text2);
+    font-size: 1.25rem;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+.contact_elem > div:nth-child(2){
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.contact_elem > div:nth-child(1){
+    position: relative;
+}
+
+.unread{
+    top : 0;
+    position: absolute;
+    color : var(--text4);
+    background-color: var(--bg2);
+    width: 20px;
+    text-align: center;
+    font-weight: bold;
+    font-size: medium;
+    border-radius: 999em;
+}
+
+.contact_time{
+    position: relative;
+    top : -15px;
+}
+
+#contact_droplist > div{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top : 100%;
+    right : 0;
+    background-color: black;
+    border : 1px solid slategrey;
+    padding-block: 0.7em;
+    padding-inline: 0.5em;
+}
+
+#contact_droplist > div > p{
+    width: 40vw;
+    display: flex;
+    align-items: center;
+    gap : 0.5em;
+    padding-block: 0.4em;
+    padding-inline : 0.6em;
+}
+
+#contact_droplist > div > p:last-child{
+    /* justify-self: center; */
+    margin : auto;
+    /* display: no; */
+    /* color : black; */
+    font-weight: bolder;
+    background-color: rgb(251, 61, 61);
+}
