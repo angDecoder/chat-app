@@ -1,11 +1,9 @@
 #Contact{
-    /* background: blue; */
     flex: none;
     height: 100vh;
     width: 100vw;
     overflow-y: auto;
     color : var(--text3);
-    /* overflow: hidden; */
 }
 
 #contact_user{
@@ -14,7 +12,7 @@
     /* justify-content: space-between; */
     position: relative;
 
-    padding : 0.4em;
+    /* padding : 0.4em; */
     background-color: rgba(0, 0, 0, 0.61);
 }
 #contact_user > span{
@@ -35,14 +33,15 @@
 .contact_elem{
     padding-inline : 0.4em;
     padding-block: 1em;
-    /* background: blue; */
     background-color: rgba(0, 0, 0, 0.538);
+    /* background-color: blue; */
     display: flex;
     gap : 0.4em;
     align-items: center;
 }
 .contact_message{
     color : var(--text3);
+    /* color : red; */
     width: 100%;
 }
 .contact_username{
@@ -52,6 +51,9 @@
     text-transform: capitalize;
 }
 .contact_elem > div:nth-child(2){
+    /* background-color: red; */
+    flex-grow: 1;
+    /* width: 100%; */
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -68,15 +70,18 @@
     position: absolute;
     color : var(--text4);
     background-color: var(--bg2);
-    width: 20px;
-    text-align: center;
     font-weight: bold;
     font-size: var(--text-sm);
     border-radius: 999em;
+    padding : 0.3em;
 }
 
 .contact_time{
+    font-size : var(--text-sm);
     position: relative;
+    text-align: right;
+    flex-grow: 1;
+    /* background-color: blue; */
     top : -15px;
 }
 
@@ -90,6 +95,8 @@
     border : 1px solid slategrey;
     padding-block: 0.7em;
     padding-inline: 0.5em;
+    z-index: 100;
+    font-size: var(--text-sm);
 }
 
 #contact_droplist > div > p{
@@ -105,4 +112,34 @@
     color : white;
     font-weight: bolder;
     background-color: rgb(251, 61, 61);
+}
+
+@media screen and (min-width: 480px) {
+    .contact_message{
+        font-size: var(--text-sm);
+    }
+    .contact_elem{
+        padding-inline : 1em;
+        gap : 1.5em;
+    }
+    
+}
+
+@media screen and (min-width: 900px) {
+    #Contact{
+        width: 30vw;
+        background-color: rgba(0, 0, 0, 0.567);
+        border-right: 1px solid var(--text3);
+    }
+    #contact_user{
+        /* background-color: red; */
+        padding-block: 0.5em;
+        padding-inline: 1em;
+        margin : 0;
+        border-bottom: 1px solid var(--text3);
+        /* padding: 0.5em; */
+    }
+    #contact_droplist{
+        padding : 0;
+    }
 }

@@ -1,18 +1,18 @@
 :root {
-  --text1 : #e9edefe0;
-  --text2 :  #d1d7db;
-  --text3 :  #a5afb6;
-  --text4 : #06cf9c;
-  --link : #53bdeb;
-  --bg1 : #0000007e;
-  --bg2 : #202c33;
-  --para : 1.25rem;
-  --text-lg : 1.5rem;
-  --text-md : 1.25rem;
-  --text-sm : 1rem;
+  --text1: #e9edefe0;
+  --text2: #d1d7db;
+  --text3: #a5afb6;
+  --text4: #06cf9c;
+  --link: #53bdeb;
+  --bg1: #0000007e;
+  --bg2: #202c33;
+  --para: 1.25rem;
+  --text-lg: 1.5rem;
+  --text-md: 1.25rem;
+  --text-sm: 1rem;
 }
 
-*{
+* {
   margin: 0;
   padding: 0;
   /* color : var(--text1); */
@@ -20,18 +20,77 @@
   font-family: "Segoe UI", "Helvetica Neue", Helvetica, "Lucida Grande", Arial, Ubuntu, Cantarell, "Fira Sans", sans-serif;
 }
 
-.image-id{
-  width : 50px;
+.image-id {
+  width: 50px;
   height: 50px;
   object-fit: cover;
   object-position: center;
   background-color: black;
   border-radius: 9999em;
-  padding : 0.1em;
-  border : 2px solid var(--text3);
+  padding: 0.1em;
+  border: 2px solid var(--text3);
 }
 
-.svg-img{
+.svg-img {
   width: 30px;
   background-color: var(--bg2);
+}
+
+
+@media screen and (min-width: 480px) {
+  :root {
+    --text-lg: 2rem;
+    --text-md: 1.8rem;
+    --text-sm: 1.3rem;
+  }
+
+  .svg-img {
+    width: 50px;
+    height: 50px;
+  }
+  .image-id {
+    width: 75px;
+    height: 75px;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  :root {
+    --text-lg: 1.5rem;
+    --text-md: 1.25rem;
+    --text-sm: 1rem;
+  }
+
+  .image-id {
+    width: 50px;
+    height: 50px;
+  }
+
+  .svg-img {
+    width: 35px;
+    height: 35px;
+  }
+
+  /* width */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: var(--bg1);
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: var(--text3);
+    border-radius: 1em;
+    
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
 }

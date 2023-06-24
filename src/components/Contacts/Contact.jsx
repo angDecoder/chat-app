@@ -21,7 +21,7 @@ function Contact({ elem, i }) {
       <img src={userimg} alt="" className='image-id' />
       {
         unreadMessage > 0 ?
-          <div className='svg-img unread'>
+          <div className='unread'>
             {unreadMessage}
           </div> :
           <></>
@@ -31,7 +31,7 @@ function Contact({ elem, i }) {
       <span className='contact_username'>
         {username}
       </span>
-      <span className=''>{time}</span>
+      <span className='contact_time'>{time}</span>
       <span className='contact_message'>
         {
           message.length > 40 ?
