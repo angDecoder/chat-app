@@ -1,18 +1,21 @@
 :root {
   --text1 : #e9edefe0;
   --text2 :  #d1d7db;
-  --text3 :  #8696a0;
+  --text3 :  #a5afb6;
   --text4 : #06cf9c;
   --link : #53bdeb;
   --bg1 : #0000007e;
   --bg2 : #202c33;
   --para : 1.25rem;
+  --text-lg : 1.5rem;
+  --text-md : 1.25rem;
+  --text-sm : 1rem;
 }
 
 *{
   margin: 0;
   padding: 0;
-  color : var(--text1);
+  /* color : var(--text1); */
   box-sizing: border-box;
   font-family: "Segoe UI", "Helvetica Neue", Helvetica, "Lucida Grande", Arial, Ubuntu, Cantarell, "Fira Sans", sans-serif;
 }

@@ -1,4 +1,5 @@
-import React,{ useState,useEffect } from 'react'
+import React,{ useState,useEffect } from 'react';
+import { Outlet } from 'react-router-dom';
 import './Layout.css';
 import Chats from '../Chats/Chats';
 import ContactList from '../Contacts/ContactList';
@@ -10,7 +11,8 @@ function Layout() {
   return (
     <div id='Layout'>
       <ContactList  />
-      <Chats currentChat={currentChat} />
+      <Outlet />
+      {/* <Chats currentChat={currentChat} /> */}
     </div>
   )
 }

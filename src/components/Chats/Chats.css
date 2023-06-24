@@ -1,5 +1,139 @@
 #Chats{
-    background-color: red;
     width: 100vw;
+    height: 100svh;
     flex:none;
+    color: var(--text1);
+    display: flex;
+    flex-direction: column;
+}
+
+#chat_info{
+    padding-inline : 0.5em;
+    padding-block: 0.7em;
+    display: flex;
+    align-items: center;
+    gap : 0.3em;
+    background-color: rgba(0, 0, 0, 0.53);
+}
+#chat_info > span{
+    text-transform: capitalize;
+    flex-grow: 1;
+    text-align: right;
+    font-size: var(--text-lg);
+    font-weight: bold;
+    /* color : red; */
+}
+
+#chat_logs{
+    min-height: 50vh;
+    overflow: scroll;
+    padding-inline: 0.4em;
+    padding-block: 0.5em;
+}
+
+.chat_message{
+    max-width: 80%;
+    padding-inline : 0.4em;
+    padding-block: 1em;
+    font-size: var(--text-md);
+    /* color : red; */
+    /* position: relative; */
+    border-radius: 0.5em;
+}
+
+.chat_message.self_message{
+    background-color:  #00775d;
+    color : var(--text2);
+    align-self: flex-end;
+}
+.chat_message.other_message{
+    background-color: #202C33;
+}
+
+.chat_secton{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin-block : 1em;
+    gap : 1em;
+    position: relative;
+    /* background-color: red; */
+}
+
+.message_date{
+    position: sticky; 
+    top : 0;
+    background-color: var(--bg2);
+    padding : 0.5em;
+    color : var(--text3);
+    width: fit-content;
+    align-self: center;
+    padding-inline : 0.5em;
+    padding-block : 0.3em;
+    border-radius: 1em;
+    border : 1px solid var(--text3);
+}
+
+.message_time{
+    position: relative;
+    text-align: right;
+    font-size: var(--text-sm);
+    top : 15px;
+    color : var(--text3);
+    left : 0;
+    display: flex;
+    justify-content: flex-end;
+    gap : 0.1em;
+    align-items: center;
+}
+
+.message_sender{
+    position: relative;
+   text-transform: capitalize;
+   font-weight: bold;
+   top : -10px;
+}
+
+.message_sender.self_message{
+    color : var(--bg2);
+}
+
+.message_sender.other_message{
+    color : var(--text4);
+}
+
+.message_status{
+    width: 25px;
+    height: 25px;
+}
+
+#chat_type_message{
+    width: 100vw;
+    background-color: rgba(27, 34, 39, 0.596);
+    padding-block: 0.4em;
+    display: flex;
+    padding-inline : 0.4em;
+    margin-block: 1em;
+}
+
+#chat_type_message > textarea{
+    background-color: var(--bg2);
+    border :none;
+    color: var(--text1);
+    padding-inline: 1em;
+    padding-block: 0.8em;
+    font-size: var(--text-sm);
+    border-radius: 2em;
+    flex-grow: 1;
+
+}
+
+
+#chat_type_message > textarea::placeholder{
+    color : var(--text3);
+}
+
+#chat_type_message > img{
+    width: 40px;
+    width: 40px;
 }

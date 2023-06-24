@@ -1,43 +1,47 @@
 import React from 'react'
 import userimg from "../../assets/user.png";
+import { useNavigate } from 'react-router-dom';
 
 
-function Contact({elem, i}) {
-    const { username, image, unreadMessage, lastMessage } = elem;
-    const { message, time } = lastMessage;
+function Contact({ elem, i }) {
 
-    const scrollToChats = ()=>{
-        document.getElementById('Chats').scrollIntoView({
-           behavior : 'smooth'
-        })
-    }
+  const navigate = useNavigate();
+  const { username, image, unreadMessage, lastMessage } = elem;
+  const { message, time } = lastMessage;
 
-    return <div onClick={scrollToChats} className='contact_elem' key={username}>
-      <div>
-        <img src={userimg} alt="" className='image-id' />
-        {
-          unreadMessage > 0 ?
-            <div className='svg-img unread'>
-              {unreadMessage}
-            </div> :
-            <></>
-        }
-      </div>
-      <div>
-        <span className='contact_username'>
-          {username}
-        </span>
-        <span className=''>{time}</span>
-        <span className='contact_message'>
-          {
-            message.length > 40 ?
-              message.substring(0, 40) + "..." :
-              message
-          }
-        </span>
-      </div>
-    </div>
+  const scrollToChats = () => {
+    document.getElementById('Chats').scrollIntoView({
+      behavior: 'smooth'
+    });
+    navigate(`chat/${username}`);
   }
-  
+
+  return <div onClick={scrollToChats} className='contact_elem' key={username}>
+    <div>
+      <img src={userimg} alt="" className='image-id' />
+      {
+        unreadMessage > 0 ?
+          <div className='svg-img unread'>
+            {unreadMessage}
+          </div> :
+          <></>
+      }
+    </div>
+    <div>
+      <span className='contact_username'>
+        {username}
+      </span>
+      <span className=''>{time}</span>
+      <span className='contact_message'>
+        {
+          message.length > 40 ?
+            message.substring(0, 40) + "..." :
+            message
+        }
+      </span>
+    </div>
+  </div>
+}
+
 
 export default Contact

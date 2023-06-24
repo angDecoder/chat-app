@@ -3,7 +3,9 @@ import './Form.css';
 
 function Login() {
   return (
-    <div>Login</div>
+    <div style={{
+    
+    }}>Login</div>
   )
 }
 

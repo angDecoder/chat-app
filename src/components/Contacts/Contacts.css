@@ -4,6 +4,7 @@
     height: 100vh;
     width: 100vw;
     overflow-y: auto;
+    color : var(--text3);
     /* overflow: hidden; */
 }
 
@@ -18,7 +19,7 @@
 }
 #contact_user > span{
     /* background-color: red; */
-    font-size: larger;
+    font-size: var(--text-lg);
     font-weight: bold;
    flex-grow: 1;
    padding-inline: 0.5em;
@@ -46,7 +47,7 @@
 }
 .contact_username{
     color : var(--text2);
-    font-size: 1.25rem;
+    font-size: var(--text-md);
     font-weight: bold;
     text-transform: capitalize;
 }
@@ -70,7 +71,7 @@
     width: 20px;
     text-align: center;
     font-weight: bold;
-    font-size: medium;
+    font-size: var(--text-sm);
     border-radius: 999em;
 }
 
@@ -101,10 +102,7 @@
 }
 
 #contact_droplist > div > p:last-child{
-    /* justify-self: center; */
-    margin : auto;
-    /* display: no; */
-    /* color : black; */
+    color : white;
     font-weight: bolder;
     background-color: rgb(251, 61, 61);
 }
