@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef,useState } from 'react';
 import './Contacts.css';
 import defautUser from '../../assets/default_user.svg';
 import hamburger from '../../assets/hamburger.svg';
@@ -29,6 +29,8 @@ const droplist = [
 function ContactList({ currentChat }) {
 
   const dropDownRef = useRef(null);
+  // const searchRef = useRef([]);;
+  const [searchText, setSearchText] = useState('');
   const contactList = useSelector(state=>state.contact);
   const user = useSelector(state=>state.user);
   
@@ -78,8 +80,27 @@ function ContactList({ currentChat }) {
 
         </div>
       </div>
+      <div id="contact_search">
+        <input value={searchText}
+          onChange={(e)=>setSearchText(e.target.value)}
+        type="text" placeholder='Search Contacts...'  />
+        {
+          searchText.trim()===''?"":
+          <img src={Close}
+            onClick={()=>setSearchText('')}
+          alt="" className='svg-img' />
+
+        }
+      </div>
       <div id='contact_list'>
         {
+          searchText?.trim()? // filter search value
+            Object.values(contactList).filter((elem,i)=>{
+                if( elem.username.includes(searchText.trim()) )
+                  return true;
+            }).map((elem,i)=>{
+              return <Contact elem={elem} key={i} />
+            }):
           Object.values(contactList).map((elem, i) => <Contact elem={elem} key={i} />)
         }
       </div>

@@ -1,22 +1,29 @@
 import React from 'react'
 import userimg from "../../assets/user.png";
-import { useNavigate } from 'react-router-dom';
+import {  NavLink } from 'react-router-dom';
 
 
 function Contact({ elem, i }) {
 
-  const navigate = useNavigate();
-  const { username, image, unreadMessage, lastMessage } = elem;
+  // const navigate = useNavigate();
+  const { username, image, unreadMessage, lastMessage,id } = elem;
   const { message, time } = lastMessage;
 
   const scrollToChats = () => {
     document.getElementById('Chats').scrollIntoView({
       behavior: 'smooth'
     });
-    navigate(`chat/${username}`);
+    // navigate(`chat/${username}`);
   }
 
-  return <div onClick={scrollToChats} className='contact_elem' key={username}>
+  return <NavLink to={`chat/${id}`} onClick={scrollToChats}
+    className={
+      ({isActive,isPending})=>{
+        const text = isPending || !isActive ? "" : "active_link";
+        return text + " contact_elem"
+      } 
+    }
+    key={username}>
     <div>
       <img src={userimg} alt="" className='image-id' />
       {
@@ -40,7 +47,7 @@ function Contact({ elem, i }) {
         }
       </span>
     </div>
-  </div>
+  </NavLink>
 }
 
 

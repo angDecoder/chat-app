@@ -6,6 +6,7 @@
   --link: #53bdeb;
   --bg1: #0000007e;
   --bg2: #202c33;
+  --bg3 : #21232a;
   --para: 1.25rem;
   --text-lg: 1.5rem;
   --text-md: 1.25rem;
@@ -64,11 +65,13 @@
   .image-id {
     width: 50px;
     height: 50px;
+    cursor: pointer;
   }
 
   .svg-img {
     width: 35px;
     height: 35px;
+    cursor: pointer;
   }
 
   /* width */
