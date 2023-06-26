@@ -155,7 +155,7 @@
 #contact_droplist>div>p:last-child {
     color: white;
     font-weight: bolder;
-    background-color: rgb(251, 61, 61);
+    background-color: var(--text5);
 }
 
 @media screen and (min-width: 480px) {

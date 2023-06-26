@@ -1,0 +1,76 @@
+#Register,#Login{
+    width: 100svw;
+}
+.auth-form{
+    width: 100svw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap : 1em;
+    color : var(--text2);
+    /* background-color: red; */
+}
+.auth-form > p{
+    font-size: var(--text-sm);
+}
+.auth-form  button{
+    width: 35vw;
+}
+.auth-form > h1{
+    font-size: var(--text-xl);
+    color : var(--text1);
+    margin-block-end: .5em;
+    margin-block-start: 1em;
+}
+.auth-form > .input{
+    width: 50%;
+}
+
+.auth-form > .input:focus{
+    width: 70%;    
+}
+.form-nav{
+    display:flex;
+    justify-content: center;
+    gap : 0.5em;
+    align-items: center;
+    font-size: var(--text-lg);
+    color : var(--text1);
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.541);
+    padding-block: 0.5em;
+}
+#register_userimg{
+    display: none;
+}
+label[for='register_userimg']{
+    display: flex;
+    align-items: center;
+    gap : 0.4em;
+    font-size: var(--text-md);
+}
+
+@media screen and (min-width: 480px) {
+    .auth-form{
+        width: 80vw;
+        /* background-color: red; */
+        margin-inline:auto;
+    }
+}
+@media screen and (min-width: 900px) {
+    .auth-form{
+        width: 50vw;
+        background-color: rgba(0, 0, 0, 0.3);
+        padding-block: 2em;
+        margin-block: 1.5em;
+        border:3px solid var(--bg2);
+        border-top : 7px solid var(--text4);
+        border-radius: 0.5em;
+    }
+    .auth-form > h1{
+        margin-block-start: 0;
+    }
+    .auth-form button{
+        width: 170px;
+    }
+}
